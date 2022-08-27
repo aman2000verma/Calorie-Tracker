@@ -1,0 +1,14 @@
+.btn-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+button {
+    background-color: lightgreen;
+    border: none;
+    border-radius: 4px;
+    width: 8rem;
+    cursor: pointer;
+    height: 2rem;
+}

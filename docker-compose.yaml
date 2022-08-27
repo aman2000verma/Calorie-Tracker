@@ -1,0 +1,58 @@
+version: '3.7'
+
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    image: tracker-server
+    restart: unless-stopped
+    container_name: app-tracker-server
+    volumes:
+      - ./server/:/server
+      - /server/node_modules
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    env_file: ./server/.env
+    networks:
+      - app-network
+
+  mongo:
+    image: mongo
+    restart: unless-stopped
+    volumes:
+      - database:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    image: myapp-client
+    restart: unless-stopped
+    container_name: app-tracker-client
+    volumes:
+      - ./client/:/client
+      - /client/node_modules
+    depends_on:
+      - server
+    ports:
+      - "8080:8080"
+      - "80:80"
+    networks:
+      - app-network
+
+networks:
+    app-network:
+        driver: bridge
+
+volumes:
+    database:
+    node_modules:
+    web-root:
+      driver: local

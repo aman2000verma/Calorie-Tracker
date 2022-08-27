@@ -1,0 +1,39 @@
+.card {
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    border-bottom: 2px solid green;
+    margin: 0px 20%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 10rem !important;
+}
+
+
+@media screen and (max-width: 768px) {
+    .card {
+        text-align: center;
+        align-items: center;
+        vertical-align: middle;
+        margin: 0%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+
+.chart {
+    max-width: 30%;
+    max-height: auto;
+    padding: 1rem 1rem
+}

@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 2rem 2rem;
+}
+
+table th {
+    background-color: yellow;
+}
+
+table tr {
+    background-color: #ffffe6;
+}
+
+table td,
+table th {
+    max-width: 6rem;
+    border: 1px solid #ddd;
+    padding: 4px 2px;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+.input-container {
+    width: 100%
+}
+
+.btn--action {
+    cursor: pointer;
+}

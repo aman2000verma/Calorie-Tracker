@@ -1,0 +1,13 @@
+.navigator {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0% 20%;
+    vertical-align: middle;
+    text-align: center;
+    align-items: center;
+}
+
+.btn--nav {
+    cursor: pointer;
+}
